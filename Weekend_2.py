@@ -49,6 +49,7 @@ class ParkingGarage:
         if len(self.tickets) >0 and len(self.parking_spaces) > 0:
             ticket = self.tickets.pop(0)
             space = self.parking_spaces.pop(0)
+            self.current_ticket[ticket] = {'paid': False, 'space': space}
             print(f'Your ticket number is {ticket} and your parking space is {space} ')
         else:
             print("Sorry, the garage is full.")
@@ -78,11 +79,16 @@ class ParkingGarage:
                 self.parking_spaces.append(ticket)
         else:
             print("Wrong ticket number! I'll wait.....")
-
+        
+    def driver(self, num_iterations=5):
+        for _ in range(num_iterations):
+            print("\nNew User:")
+            self.Take_ticket()
+            self.Pay_for_parking()
+            self.Leave_garage()
 
 garage = ParkingGarage()
 
-garage.take_ticket()
-garage.take_ticket()
-garage.pay_for_parking()
-garage.leave_garage()
+garage.Take_ticket()
+garage.Pay_for_parking()
+garage.Leave_garage()
