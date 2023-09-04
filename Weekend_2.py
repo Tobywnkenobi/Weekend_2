@@ -1,3 +1,5 @@
+
+
 # Class Methods
 # Your Parking Garage class should implement the following methods:
 
@@ -32,6 +34,7 @@
 # instance = object   class = values, structure.
 # Final Steps
 # Upon project completion, commit the final changes, synchronize all pull requests, and submit your GitHub links. The code should be identical across all members of the team.
+import math
 
 tickets = ()
 
@@ -41,7 +44,7 @@ current_ticket = {}
 
 class ParkingGarage:
     def __init__(self, total_tickets=100,total_spaces=100):
-        self.tickets = [i for i in range(1, total_tickets +1)]
+        self.tickets = [i for i in 1(range(1, total_tickets +1))]
         self.parking_spaces = [i for i in range(1, total_spaces +1)]
         self.current_ticket = {}         
         
